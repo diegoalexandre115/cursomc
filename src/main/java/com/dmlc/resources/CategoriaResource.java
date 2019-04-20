@@ -1,6 +1,5 @@
 package com.dmlc.resources;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +24,11 @@ public class CategoriaResource {
 		Categoria obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<?> list() {
+		List<Categoria> list = service.list();
+		return ResponseEntity.ok().body(list);
+	}
+	
 }
